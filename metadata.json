@@ -1,0 +1,5 @@
+{
+  "name": "Library Project Generation Assistant",
+  "description": "An assistant to generate library and cultural projects based on the structure proposed by Ezequiel Ander-Egg. The app guides the user through all project phases, includes a Gantt chart and budget visualization, and allows downloading the final project as a PDF.",
+  "requestFramePermissions": []
+}
