@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Project } from '../types';
 import { PencilIcon, TrashIcon, FolderOpenIcon } from '@heroicons/react/24/solid';
