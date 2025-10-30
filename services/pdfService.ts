@@ -6,14 +6,11 @@ export const downloadProjectAsPDF = async (elementId: string, projectName: strin
   const { jsPDF } = jspdf;
   const input = document.getElementById(elementId);
   if (!input) {
-    console.error('Element not found for PDF generation');
-    return;
+    const errorMsg = 'Element not found for PDF generation';
+    console.error(errorMsg);
+    alert('Error al generar el PDF: No se pudo encontrar el contenido del proyecto.');
+    throw new Error(errorMsg);
   }
-
-  // Show a loading state if possible
-  const originalButtonText = "Download as PDF";
-  // You could have a state for this in your component
-  console.log("Generating PDF...");
 
   try {
     const canvas = await html2canvas(input, {
@@ -60,8 +57,7 @@ export const downloadProjectAsPDF = async (elementId: string, projectName: strin
 
   } catch (error) {
     console.error('Error generating PDF:', error);
-  } finally {
-    // Revert loading state
-    console.log("PDF generation finished.");
+    alert('Ocurrió un error al generar el PDF. Por favor, revise la consola para más detalles.');
+    throw error;
   }
 };

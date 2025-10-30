@@ -7,12 +7,10 @@ import ProjectEditor from './components/ProjectEditor';
 import WelcomeScreen from './components/WelcomeScreen';
 import SavedProjectsScreen from './components/SavedProjectsScreen';
 import {
-  ArrowDownTrayIcon,
   PlusIcon,
   HomeIcon,
   BookmarkSquareIcon
 } from '@heroicons/react/24/solid';
-import { downloadProjectAsPDF } from './services/pdfService';
 import { GoogleGenAI } from '@google/genai';
 import { sections } from './constants';
 
@@ -154,13 +152,6 @@ const App: React.FC = () => {
                     className="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-colors"
                   >
                     {isSaving ? '¡Guardado!' : 'Guardar Proyecto'}
-                  </button>
-                  <button
-                    onClick={() => downloadProjectAsPDF('project-summary-content', currentProject.name)}
-                    className="p-2 text-slate-600 hover:text-sky-600 hover:bg-slate-100 rounded-full transition-colors"
-                    title="Descargar Proyecto"
-                  >
-                     <ArrowDownTrayIcon className="h-6 w-6" />
                   </button>
                 </>
               )}
